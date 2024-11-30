@@ -1,66 +1,149 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Coin Play
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Coin Play** is a simple SaaS platform built with Laravel, Inertia.js, and React. The platform allows users to play a fun and engaging number-guessing game by paying with coins. Users can purchase coins through a secure payment gateway and use them to enjoy the game.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Number Guessing Game**: Players guess a number within a specified range to win rewards.
+- **Secure Payments**: Coins can be purchased using a reliable payment gateway integration.
+- **User-Friendly Interface**: Built with React and Inertia.js for a seamless and interactive experience.
+- **Coin Management**: Track and manage coins directly in your account.
+- **SaaS Ready**: Subscription-based monetization model for ongoing revenue.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel
+- **Frontend**: React with Inertia.js
+- **Styling**: Tailwind CSS
+- **Database**: MySQL
+- **Payment Gateway**: Integrated with [Chapa](https://chapa.co/)
+- **Real-time Features**: WebSockets (if applicable for game updates)
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Follow the steps below to set up the project locally.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.x
+- Composer
+- Node.js & npm
+- MySQL
+- Git
 
-## Laravel Sponsors
+### Steps
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clone the repository:
 
-### Premium Partners
+   ```bash
+   git clone https://github.com/your-username/coin-play.git
+   cd coin-play
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. Install PHP dependencies:
+Use Composer to install the backend dependencies:
 
-## Contributing
+   ```bash
+    composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Install JavaScript dependencies:
+Use npm to install the frontend dependencies:
 
-## Code of Conduct
+    ```bash
+    npm install
+    
+4. Compile frontend assets:
+Build the frontend assets for development:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    npm run dev
 
-## Security Vulnerabilities
+5. Configure environment variables:
+Copy the example .env file to create your environment configuration:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    cp .env.example .env
+Open the .env file and update the following values:
 
-## License
+Database credentials (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Payment gateway credentials (e.g., CHAPA_PUBLIC_KEY, CHAPA_SECRET_KEY)
+
+Generate application key:
+Generate a unique application key for the Laravel application:
+
+    php artisan key:generate
+Run database migrations and seeders:
+Migrate the database schema:
+
+    php artisan migrate
+Start the development server:
+Launch the Laravel application locally:
+
+    php artisan serve
+    
+Access the application:
+Open your browser and navigate to http://localhost:8000.
+
+# Usage
+
+### **Sign Up / Login**
+Create an account to access the platform and start using its features.
+
+### **Purchase Coins**
+Use the integrated payment gateway to add coins to your account, enabling you to participate in the game.
+
+### **Play the Game**
+Enter the number-guessing game, choose a number within the specified range, and start making guesses!
+
+### **Win Rewards**
+Earn exciting rewards based on your correct guesses and enjoy the thrill of the game.
+
+
+# Project Structure
+
+### `app/`
+This directory contains the backend logic and business rules of the application, including controllers, models, middleware, and other core components.
+
+### `resources/js/`
+This directory holds all React components and frontend logic, managing the user interface and interaction layers.
+
+### `routes/`
+This directory defines the web and API routes for the application, mapping URLs to specific controllers and actions.
+
+### `database/`
+This directory contains migrations and seeders used to define and populate the database schema and initial data.
+
+### `public/`
+This directory includes publicly accessible assets like images, JavaScript, CSS, and the entry point for the Laravel application (`index.php`).
+
+### `config/`
+This directory contains Laravel configuration files that manage various settings for the application, such as database connections, mail, caching, and more.
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+
+Create a feature branch:
+
+    git checkout -b feature-name
+Commit your changes:
+
+    git commit -m "Add feature name"
+Push to the branch:
+
+    git push origin feature-name
+Create a pull request.
+
+
+Contact
+For questions or feedback, feel free to reach out:
+
+GitHub: @MusieTesfaye
+Happy Gaming! 🎮
+
+
+
+
+
+
